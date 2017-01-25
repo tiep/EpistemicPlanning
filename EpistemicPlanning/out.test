@@ -1,0 +1,381 @@
+CPA+ version 1.2 - Built date: Fri Aug 14 16:32:59 MDT 2015
+
+
+AGENT DECLARATION
+---------------------------
+a,b
+
+FLUENT DECLARATION
+----------------------------
+x,y,z
+
+PROPOSITIONS
+----------------------------
+executable aa if B(a,(-x AND y))
+
+executable bb
+
+bb causes -x if (-y)
+
+bb causes y if (-y)
+
+cc determines x
+
+cc determines y
+
+dd announces (-x) | (-y)
+
+dd announces (x AND y)
+
+b observes cc if (x AND y)
+
+b aware of bb if (-y AND x)
+
+b observes bb if (-y AND x)
+
+INIT
+----------------------------
+(x)
+(-y)
+(z)
+C(a,b,(x))
+C(a,b,B(a,(y)) | B(a,(-x AND -y)))
+
+GOAL 
+----------------------------
+(f)
+
+STATISTICS 
+----------------------------
+Total fluents: 3
+Unknown fluents: 
+Building domain...Building agent list...
+Building fluent literals
+Print literal x is 0
+Print literal y is 2
+Print literal z is 4
+Building action list
+Testing Kripke planner functions --------------------------
+------------------ build init Kripke -------------------------
+-------start building kstates----------
+number of literals is: 6
+Number of states is: 8
+Number of agents is: 2
+Edge with id 0 has label 0 and connects worlds 0 --> 0
+Edge with id 1 has label 0 and connects worlds 0 --> 1
+Edge with id 2 has label 0 and connects worlds 0 --> 2
+Edge with id 3 has label 0 and connects worlds 0 --> 3
+Edge with id 4 has label 0 and connects worlds 0 --> 4
+Edge with id 5 has label 0 and connects worlds 0 --> 5
+Edge with id 6 has label 0 and connects worlds 0 --> 6
+Edge with id 7 has label 0 and connects worlds 0 --> 7
+Edge with id 8 has label 0 and connects worlds 1 --> 0
+Edge with id 9 has label 0 and connects worlds 1 --> 1
+Edge with id 10 has label 0 and connects worlds 1 --> 2
+Edge with id 11 has label 0 and connects worlds 1 --> 3
+Edge with id 12 has label 0 and connects worlds 1 --> 4
+Edge with id 13 has label 0 and connects worlds 1 --> 5
+Edge with id 14 has label 0 and connects worlds 1 --> 6
+Edge with id 15 has label 0 and connects worlds 1 --> 7
+Edge with id 16 has label 0 and connects worlds 2 --> 0
+Edge with id 17 has label 0 and connects worlds 2 --> 1
+Edge with id 18 has label 0 and connects worlds 2 --> 2
+Edge with id 19 has label 0 and connects worlds 2 --> 3
+Edge with id 20 has label 0 and connects worlds 2 --> 4
+Edge with id 21 has label 0 and connects worlds 2 --> 5
+Edge with id 22 has label 0 and connects worlds 2 --> 6
+Edge with id 23 has label 0 and connects worlds 2 --> 7
+Edge with id 24 has label 0 and connects worlds 3 --> 0
+Edge with id 25 has label 0 and connects worlds 3 --> 1
+Edge with id 26 has label 0 and connects worlds 3 --> 2
+Edge with id 27 has label 0 and connects worlds 3 --> 3
+Edge with id 28 has label 0 and connects worlds 3 --> 4
+Edge with id 29 has label 0 and connects worlds 3 --> 5
+Edge with id 30 has label 0 and connects worlds 3 --> 6
+Edge with id 31 has label 0 and connects worlds 3 --> 7
+Edge with id 32 has label 0 and connects worlds 4 --> 0
+Edge with id 33 has label 0 and connects worlds 4 --> 1
+Edge with id 34 has label 0 and connects worlds 4 --> 2
+Edge with id 35 has label 0 and connects worlds 4 --> 3
+Edge with id 36 has label 0 and connects worlds 4 --> 4
+Edge with id 37 has label 0 and connects worlds 4 --> 5
+Edge with id 38 has label 0 and connects worlds 4 --> 6
+Edge with id 39 has label 0 and connects worlds 4 --> 7
+Edge with id 40 has label 0 and connects worlds 5 --> 0
+Edge with id 41 has label 0 and connects worlds 5 --> 1
+Edge with id 42 has label 0 and connects worlds 5 --> 2
+Edge with id 43 has label 0 and connects worlds 5 --> 3
+Edge with id 44 has label 0 and connects worlds 5 --> 4
+Edge with id 45 has label 0 and connects worlds 5 --> 5
+Edge with id 46 has label 0 and connects worlds 5 --> 6
+Edge with id 47 has label 0 and connects worlds 5 --> 7
+Edge with id 48 has label 0 and connects worlds 6 --> 0
+Edge with id 49 has label 0 and connects worlds 6 --> 1
+Edge with id 50 has label 0 and connects worlds 6 --> 2
+Edge with id 51 has label 0 and connects worlds 6 --> 3
+Edge with id 52 has label 0 and connects worlds 6 --> 4
+Edge with id 53 has label 0 and connects worlds 6 --> 5
+Edge with id 54 has label 0 and connects worlds 6 --> 6
+Edge with id 55 has label 0 and connects worlds 6 --> 7
+Edge with id 56 has label 0 and connects worlds 7 --> 0
+Edge with id 57 has label 0 and connects worlds 7 --> 1
+Edge with id 58 has label 0 and connects worlds 7 --> 2
+Edge with id 59 has label 0 and connects worlds 7 --> 3
+Edge with id 60 has label 0 and connects worlds 7 --> 4
+Edge with id 61 has label 0 and connects worlds 7 --> 5
+Edge with id 62 has label 0 and connects worlds 7 --> 6
+Edge with id 63 has label 0 and connects worlds 7 --> 7
+Edge with id 64 has label 1 and connects worlds 0 --> 0
+Edge with id 65 has label 1 and connects worlds 0 --> 1
+Edge with id 66 has label 1 and connects worlds 0 --> 2
+Edge with id 67 has label 1 and connects worlds 0 --> 3
+Edge with id 68 has label 1 and connects worlds 0 --> 4
+Edge with id 69 has label 1 and connects worlds 0 --> 5
+Edge with id 70 has label 1 and connects worlds 0 --> 6
+Edge with id 71 has label 1 and connects worlds 0 --> 7
+Edge with id 72 has label 1 and connects worlds 1 --> 0
+Edge with id 73 has label 1 and connects worlds 1 --> 1
+Edge with id 74 has label 1 and connects worlds 1 --> 2
+Edge with id 75 has label 1 and connects worlds 1 --> 3
+Edge with id 76 has label 1 and connects worlds 1 --> 4
+Edge with id 77 has label 1 and connects worlds 1 --> 5
+Edge with id 78 has label 1 and connects worlds 1 --> 6
+Edge with id 79 has label 1 and connects worlds 1 --> 7
+Edge with id 80 has label 1 and connects worlds 2 --> 0
+Edge with id 81 has label 1 and connects worlds 2 --> 1
+Edge with id 82 has label 1 and connects worlds 2 --> 2
+Edge with id 83 has label 1 and connects worlds 2 --> 3
+Edge with id 84 has label 1 and connects worlds 2 --> 4
+Edge with id 85 has label 1 and connects worlds 2 --> 5
+Edge with id 86 has label 1 and connects worlds 2 --> 6
+Edge with id 87 has label 1 and connects worlds 2 --> 7
+Edge with id 88 has label 1 and connects worlds 3 --> 0
+Edge with id 89 has label 1 and connects worlds 3 --> 1
+Edge with id 90 has label 1 and connects worlds 3 --> 2
+Edge with id 91 has label 1 and connects worlds 3 --> 3
+Edge with id 92 has label 1 and connects worlds 3 --> 4
+Edge with id 93 has label 1 and connects worlds 3 --> 5
+Edge with id 94 has label 1 and connects worlds 3 --> 6
+Edge with id 95 has label 1 and connects worlds 3 --> 7
+Edge with id 96 has label 1 and connects worlds 4 --> 0
+Edge with id 97 has label 1 and connects worlds 4 --> 1
+Edge with id 98 has label 1 and connects worlds 4 --> 2
+Edge with id 99 has label 1 and connects worlds 4 --> 3
+Edge with id 100 has label 1 and connects worlds 4 --> 4
+Edge with id 101 has label 1 and connects worlds 4 --> 5
+Edge with id 102 has label 1 and connects worlds 4 --> 6
+Edge with id 103 has label 1 and connects worlds 4 --> 7
+Edge with id 104 has label 1 and connects worlds 5 --> 0
+Edge with id 105 has label 1 and connects worlds 5 --> 1
+Edge with id 106 has label 1 and connects worlds 5 --> 2
+Edge with id 107 has label 1 and connects worlds 5 --> 3
+Edge with id 108 has label 1 and connects worlds 5 --> 4
+Edge with id 109 has label 1 and connects worlds 5 --> 5
+Edge with id 110 has label 1 and connects worlds 5 --> 6
+Edge with id 111 has label 1 and connects worlds 5 --> 7
+Edge with id 112 has label 1 and connects worlds 6 --> 0
+Edge with id 113 has label 1 and connects worlds 6 --> 1
+Edge with id 114 has label 1 and connects worlds 6 --> 2
+Edge with id 115 has label 1 and connects worlds 6 --> 3
+Edge with id 116 has label 1 and connects worlds 6 --> 4
+Edge with id 117 has label 1 and connects worlds 6 --> 5
+Edge with id 118 has label 1 and connects worlds 6 --> 6
+Edge with id 119 has label 1 and connects worlds 6 --> 7
+Edge with id 120 has label 1 and connects worlds 7 --> 0
+Edge with id 121 has label 1 and connects worlds 7 --> 1
+Edge with id 122 has label 1 and connects worlds 7 --> 2
+Edge with id 123 has label 1 and connects worlds 7 --> 3
+Edge with id 124 has label 1 and connects worlds 7 --> 4
+Edge with id 125 has label 1 and connects worlds 7 --> 5
+Edge with id 126 has label 1 and connects worlds 7 --> 6
+Edge with id 127 has label 1 and connects worlds 7 --> 7
+Building fluent formule...
+refinement 15------------------------
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+Deleting edge
+phi1 contains: [[0 3 4 ]]
+phi2 contains: [[0 ]]
+----------------- 0 ------- 
+Literals contained in state 0:0, 2, 4, 
+----------------- 0 ------- 
+Literals contained in state 1:0, 2, 5, 
+----------------- 1 ------- 
+Literals contained in state 2:0, 3, 4, 
+----------------- 0 ------- 
+Literals contained in state 3:0, 3, 5, 
+----------------- 0 ------- 
+Literals contained in state 4:1, 2, 4, 
+----------------- 0 ------- 
+Literals contained in state 5:1, 2, 5, 
+----------------- 0 ------- 
+Literals contained in state 6:1, 3, 4, 
+----------------- 0 ------- 
+Literals contained in state 7:1, 3, 5, 
+Done
+size of myB is 2
+size of statelist is 8
+Starting state refinement...
+ Complete
+Starting B refinement
+ Complete
+Starting individual state in/out refinement...
+ Complete
+print pointed s 
+Literals contained in state 2:0, 3, 4, 
+Refinement done
+new size of myB is 2
+new size of statelist is 4
+
+
+List of new edges:
+Edge with id 0 has label 0 and connects worlds 0 --> 0
+Edge with id 1 has label 0 and connects worlds 0 --> 1
+Edge with id 8 has label 0 and connects worlds 1 --> 0
+Edge with id 9 has label 0 and connects worlds 1 --> 1
+Edge with id 18 has label 0 and connects worlds 2 --> 2
+Edge with id 19 has label 0 and connects worlds 2 --> 3
+Edge with id 26 has label 0 and connects worlds 3 --> 2
+Edge with id 27 has label 0 and connects worlds 3 --> 3
+Edge with id 64 has label 1 and connects worlds 0 --> 0
+Edge with id 65 has label 1 and connects worlds 0 --> 1
+Edge with id 66 has label 1 and connects worlds 0 --> 2
+Edge with id 67 has label 1 and connects worlds 0 --> 3
+Edge with id 72 has label 1 and connects worlds 1 --> 0
+Edge with id 73 has label 1 and connects worlds 1 --> 1
+Edge with id 74 has label 1 and connects worlds 1 --> 2
+Edge with id 75 has label 1 and connects worlds 1 --> 3
+Edge with id 80 has label 1 and connects worlds 2 --> 0
+Edge with id 81 has label 1 and connects worlds 2 --> 1
+Edge with id 82 has label 1 and connects worlds 2 --> 2
+Edge with id 83 has label 1 and connects worlds 2 --> 3
+Edge with id 88 has label 1 and connects worlds 3 --> 0
+Edge with id 89 has label 1 and connects worlds 3 --> 1
+Edge with id 90 has label 1 and connects worlds 3 --> 2
+Edge with id 91 has label 1 and connects worlds 3 --> 3
+
+
+Info of new states:
+Literals contained in state 0:0, 2, 4, 
+Literals contained in state 1:0, 2, 5, 
+Literals contained in state 2:0, 3, 4, 
+Literals contained in state 3:0, 3, 5, 
+
+The world s is Literals contained in state 2:0, 3, 4, 
+--------------------------Creating new Kripke Structure-----------------
+--------------Printing Kripke report for initial Kripke :-----------
+
+The number of states is: 4
+The number of agents (size of B) is: 2
+s is: 2
+
+State 0 specs:
+--The number of edges out: 6
+--The number of edges in: 6
+--contains literals: Literals contained in state 0:0, 2, 4, 
+
+print states into....
+id of edge is 0
+id of edge is 8
+id of edge is 64
+id of edge is 72
+id of edge is 80
+id of edge is 88
+State 1 specs:
+--The number of edges out: 6
+--The number of edges in: 6
+--contains literals: Literals contained in state 1:0, 2, 5, 
+
+print states into....
+id of edge is 1
+id of edge is 9
+id of edge is 65
+id of edge is 73
+id of edge is 81
+id of edge is 89
+State 2 specs:
+--The number of edges out: 6
+--The number of edges in: 6
+--contains literals: Literals contained in state 2:0, 3, 4, 
+
+print states into....
+id of edge is 18
+id of edge is 26
+id of edge is 66
+id of edge is 74
+id of edge is 82
+id of edge is 90
+State 3 specs:
+--The number of edges out: 6
+--The number of edges in: 6
+--contains literals: Literals contained in state 3:0, 3, 5, 
+
+print states into....
+id of edge is 19
+id of edge is 27
+id of edge is 67
+id of edge is 75
+id of edge is 83
+id of edge is 91
+Edge with id 0 has label 0 and connects worlds 0 --> 0
+Edge with id 1 has label 0 and connects worlds 0 --> 1
+Edge with id 8 has label 0 and connects worlds 1 --> 0
+Edge with id 9 has label 0 and connects worlds 1 --> 1
+Edge with id 18 has label 0 and connects worlds 2 --> 2
+Edge with id 19 has label 0 and connects worlds 2 --> 3
+Edge with id 26 has label 0 and connects worlds 3 --> 2
+Edge with id 27 has label 0 and connects worlds 3 --> 3
+Edge with id 64 has label 1 and connects worlds 0 --> 0
+Edge with id 65 has label 1 and connects worlds 0 --> 1
+Edge with id 66 has label 1 and connects worlds 0 --> 2
+Edge with id 67 has label 1 and connects worlds 0 --> 3
+Edge with id 72 has label 1 and connects worlds 1 --> 0
+Edge with id 73 has label 1 and connects worlds 1 --> 1
+Edge with id 74 has label 1 and connects worlds 1 --> 2
+Edge with id 75 has label 1 and connects worlds 1 --> 3
+Edge with id 80 has label 1 and connects worlds 2 --> 0
+Edge with id 81 has label 1 and connects worlds 2 --> 1
+Edge with id 82 has label 1 and connects worlds 2 --> 2
+Edge with id 83 has label 1 and connects worlds 2 --> 3
+Edge with id 88 has label 1 and connects worlds 3 --> 0
+Edge with id 89 has label 1 and connects worlds 3 --> 1
+Edge with id 90 has label 1 and connects worlds 3 --> 2
+Edge with id 91 has label 1 and connects worlds 3 --> 3
+
+
+--------------end printing initial kripke state-----------
+
+computing the effects of bb
+1
+2
+den day2
+dend day

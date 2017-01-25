@@ -1,0 +1,59 @@
+Kripke{
+<set>KState
+<set>Kedge
+world_node s
+
+
+checkEntail
+1/ return s.checkEntail(lieterl kkk)
+}
+
+Kstate{
+Literals lits 
+<set>edge_out
+<set>edge_in
+
+bool checkEntail( a literal == 1){
+ return true if the lits includes literal
+ otherwise false;
+	}
+
+
+
+bool checkEntail1([1,2] ){
+ 	return checkEntail(1) OR chechEntail(2);	
+}
+
+typedef set<unsigned short> tiep
+typedef set<tiep> fluentFormulaInNumber;
+
+bool checkEntailForFirstCase(fluentFormulaInNumber == List of List of number == [ [1,2],[3] ]) {
+	return checkEntail2([1,2]) AND checkEntail2([3]);
+}
+bool checkEntailForSecondCase(Agent , fluent formula){
+	C is a list of Kstate that needs to be check
+	go throguh edge_out e, if e.agent == Agent, then add e.to to C
+
+	for each member c of C
+           if(!c.checkEntailForFirstCase(fluentmorelue))
+		return false;
+	
+	return true; 
+}
+	
+}
+
+
+
+Kedge{
+world_node from
+world_node to
+agent
+}
+
+planner{
+
+
+}
+
+
