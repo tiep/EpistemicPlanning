@@ -1,0 +1,646 @@
+% apn1: airplane
+% apt1, apt2: airports
+% obj11, obj12, obj13, obj21, obj22, obj23: packages
+% pos1, pos2 : locations
+% cit1, cit2: cities
+% tru1, tru2 : trucks
+
+%%% fluents %%%
+fluent at_apn1_apt1, at_apn1_apt2, at_obj11_apt1, at_obj11_apt2, at_obj11_pos1, at_obj11_pos2, at_obj12_apt1, at_obj12_apt2, at_obj12_pos1, at_obj12_pos2, at_obj13_apt1, at_obj13_apt2, at_obj13_pos1, at_obj13_pos2, at_obj21_apt1, at_obj21_apt2, at_obj21_pos1, at_obj21_pos2, at_obj22_apt1, at_obj22_apt2, at_obj22_pos1, at_obj22_pos2, at_obj23_apt1, at_obj23_apt2, at_obj23_pos1, at_obj23_pos2, at_tru1_apt1, at_tru1_pos1, at_tru2_apt2, at_tru2_pos2, in_obj11_apn1, in_obj11_tru1, in_obj11_tru2, in_obj12_apn1, in_obj12_tru1, in_obj12_tru2, in_obj13_apn1, in_obj13_tru1, in_obj13_tru2, in_obj21_apn1, in_obj21_tru1, in_obj21_tru2, in_obj22_apn1, in_obj22_tru1, in_obj22_tru2, in_obj23_apn1, in_obj23_tru1, in_obj23_tru2, obj11_moved_apn1, obj12_moved_apn1, obj13_moved_apn1, obj21_moved_apn1, obj22_moved_apn1, obj23_moved_apn1, obj11_moved_tru1, obj12_moved_tru1, obj13_moved_tru1, obj21_moved_tru1, obj22_moved_tru1, obj23_moved_tru1, obj11_moved_tru2, obj12_moved_tru2, obj13_moved_tru2, obj21_moved_tru2, obj22_moved_tru2, obj23_moved_tru2;
+
+
+agent apn1, tru1, tru2;
+
+%action load-airplane(obj11, apt1) 
+executable load_airplane_obj11_apt1 if B(apn1, at_obj11_apt1), B(apn1, at_apn1_apt1), at_obj11_apt1, at_apn1_apt1;
+load_airplane_obj11_apt1 causes -at_obj11_apt1;
+load_airplane_obj11_apt1 causes in_obj11_apn1;
+apn1 observes load_airplane_obj11_apt1;
+
+executable load_airplane_obj11_apt2 if B(apn1, at_obj11_apt2), B(apn1, at_apn1_apt2), at_obj11_apt2, at_apn1_apt2;
+load_airplane_obj11_apt2 causes -at_obj11_apt2;
+load_airplane_obj11_apt2 causes in_obj11_apn1;
+apn1 observes load_airplane_obj11_apt2;
+
+executable load_airplane_obj12_apt1 if B(apn1, at_obj12_apt1), B(apn1, at_apn1_apt1), at_obj12_apt1, at_apn1_apt1;
+load_airplane_obj12_apt1 causes -at_obj12_apt1;
+load_airplane_obj12_apt1 causes in_obj12_apn1;
+apn1 observes load_airplane_obj12_apt1;
+
+executable load_airplane_obj12_apt2 if B(apn1, at_obj12_apt2), B(apn1, at_apn1_apt2), at_obj12_apt2, at_apn1_apt2;
+load_airplane_obj12_apt2 causes -at_obj12_apt2;
+load_airplane_obj12_apt2 causes in_obj12_apn1;
+apn1 observes load_airplane_obj12_apt2;
+
+executable load_airplane_obj13_apt1 if B(apn1, at_obj13_apt1), B(apn1, at_apn1_apt1), at_obj13_apt1, at_apn1_apt1;
+load_airplane_obj13_apt1 causes -at_obj13_apt1;
+load_airplane_obj13_apt1 causes in_obj13_apn1;
+apn1 observes load_airplane_obj13_apt1;
+
+executable load_airplane_obj13_apt2 if B(apn1, at_obj13_apt2), B(apn1, at_apn1_apt2), at_obj13_apt2, at_apn1_apt2;
+load_airplane_obj13_apt2 causes -at_obj13_apt2;
+load_airplane_obj13_apt2 causes in_obj13_apn1;
+apn1 observes load_airplane_obj13_apt2;
+
+executable load_airplane_obj21_apt1 if B(apn1, at_obj21_apt1), B(apn1, at_apn1_apt1), at_obj21_apt1, at_apn1_apt1;
+load_airplane_obj21_apt1 causes -at_obj21_apt1;
+load_airplane_obj21_apt1 causes in_obj21_apn1;
+apn1 observes load_airplane_obj21_apt1;
+
+executable load_airplane_obj21_apt2 if B(apn1, at_obj21_apt2), B(apn1, at_apn1_apt2), at_obj21_apt2, at_apn1_apt2;
+load_airplane_obj21_apt2 causes -at_obj21_apt2;
+load_airplane_obj21_apt2 causes in_obj21_apn1;
+apn1 observes load_airplane_obj21_apt2;
+
+executable load_airplane_obj22_apt1 if B(apn1, at_obj22_apt1), B(apn1, at_apn1_apt1), at_obj22_apt1, at_apn1_apt1;
+load_airplane_obj22_apt1 causes -at_obj22_apt1;
+load_airplane_obj22_apt1 causes in_obj22_apn1;
+apn1 observes load_airplane_obj22_apt1;
+
+executable load_airplane_obj22_apt2 if B(apn1, at_obj22_apt2), B(apn1, at_apn1_apt2), at_obj22_apt2, at_apn1_apt2;
+load_airplane_obj22_apt2 causes -at_obj22_apt2;
+load_airplane_obj22_apt2 causes in_obj22_apn1;
+apn1 observes load_airplane_obj22_apt2;
+
+executable load_airplane_obj23_apt1 if B(apn1, at_obj23_apt1), B(apn1, at_apn1_apt1), at_obj23_apt1, at_apn1_apt1;
+load_airplane_obj23_apt1 causes -at_obj23_apt1;
+load_airplane_obj23_apt1 causes in_obj23_apn1;
+apn1 observes load_airplane_obj23_apt1;
+
+executable load_airplane_obj23_apt2 if B(apn1, at_obj23_apt2), B(apn1, at_apn1_apt2), at_obj23_apt2, at_apn1_apt2;
+load_airplane_obj23_apt2 causes -at_obj23_apt2;
+load_airplane_obj23_apt2 causes in_obj23_apn1;
+apn1 observes load_airplane_obj23_apt2;
+
+%%%action unload-airplane(obj11,apt1)
+executable unload_airplane_obj11_apt1 if B(apn1, in_obj11_apn1), B(apn1, at_apn1_apt1), B(apn1, obj11_moved_apn1), in_obj11_apn1, at_apn1_apt1, obj11_moved_apn1;
+unload_airplane_obj11_apt1 causes -in_obj11_apn1;
+unload_airplane_obj11_apt1 causes at_obj11_apt1;
+unload_airplane_obj11_apt1 causes -obj11_moved_apn1;
+apn1 observes unload_airplane_obj11_apt1;
+
+executable unload_airplane_obj11_apt2 if B(apn1, in_obj11_apn1), B(apn1, at_apn1_apt2), B(apn1, obj11_moved_apn1), in_obj11_apn1, at_apn1_apt2, obj11_moved_apn1;
+unload_airplane_obj11_apt2 causes -in_obj11_apn1;
+unload_airplane_obj11_apt2 causes at_obj11_apt2;
+unload_airplane_obj11_apt2 causes -obj11_moved_apn1;
+apn1 observes unload_airplane_obj11_apt2;
+
+executable unload_airplane_obj12_apt1 if B(apn1, in_obj12_apn1), B(apn1, at_apn1_apt1), B(apn1, obj12_moved_apn1), in_obj12_apn1, at_apn1_apt1, obj12_moved_apn1;
+unload_airplane_obj12_apt1 causes -in_obj12_apn1;
+unload_airplane_obj12_apt1 causes at_obj12_apt1;
+unload_airplane_obj12_apt1 causes -obj12_moved_apn1;
+apn1 observes unload_airplane_obj12_apt1;
+
+executable unload_airplane_obj12_apt2 if B(apn1, in_obj12_apn1), B(apn1, at_apn1_apt2), B(apn1, obj12_moved_apn1), in_obj12_apn1, at_apn1_apt2, obj12_moved_apn1;
+unload_airplane_obj12_apt2 causes -in_obj12_apn1;
+unload_airplane_obj12_apt2 causes at_obj12_apt2;
+unload_airplane_obj12_apt2 causes -obj12_moved_apn1;
+apn1 observes unload_airplane_obj12_apt2;
+
+executable unload_airplane_obj13_apt1 if B(apn1, in_obj13_apn1), B(apn1, at_apn1_apt1), B(apn1, obj13_moved_apn1), in_obj13_apn1, at_apn1_apt1, obj13_moved_apn1;
+unload_airplane_obj13_apt1 causes -in_obj13_apn1;
+unload_airplane_obj13_apt1 causes at_obj13_apt1;
+unload_airplane_obj13_apt1 causes -obj13_moved_apn1;
+apn1 observes unload_airplane_obj13_apt1;
+
+executable unload_airplane_obj13_apt2 if B(apn1, in_obj13_apn1), B(apn1, at_apn1_apt2), B(apn1, obj13_moved_apn1), in_obj13_apn1, at_apn1_apt2, obj13_moved_apn1;
+unload_airplane_obj13_apt2 causes -in_obj13_apn1;
+unload_airplane_obj13_apt2 causes at_obj13_apt2;
+unload_airplane_obj13_apt2 causes -obj13_moved_apn1;
+apn1 observes unload_airplane_obj13_apt2;
+
+executable unload_airplane_obj21_apt1 if B(apn1, in_obj21_apn1), B(apn1, at_apn1_apt1), B(apn1, obj21_moved_apn1), in_obj21_apn1, at_apn1_apt1, obj21_moved_apn1;
+unload_airplane_obj21_apt1 causes -in_obj21_apn1;
+unload_airplane_obj21_apt1 causes at_obj21_apt1;
+unload_airplane_obj21_apt1 causes -obj21_moved_apn1;
+apn1 observes unload_airplane_obj21_apt1;
+
+executable unload_airplane_obj21_apt2 if B(apn1, in_obj21_apn1), B(apn1, at_apn1_apt2), B(apn1, obj21_moved_apn1), in_obj21_apn1, at_apn1_apt2, obj21_moved_apn1;
+unload_airplane_obj21_apt2 causes -in_obj21_apn1;
+unload_airplane_obj21_apt2 causes at_obj21_apt2;
+unload_airplane_obj21_apt2 causes -obj21_moved_apn1;
+apn1 observes unload_airplane_obj21_apt2;
+
+executable unload_airplane_obj22_apt1 if B(apn1, in_obj22_apn1), B(apn1, at_apn1_apt1), B(apn1, obj22_moved_apn1), in_obj22_apn1, at_apn1_apt1, obj22_moved_apn1;
+unload_airplane_obj22_apt1 causes -in_obj22_apn1;
+unload_airplane_obj22_apt1 causes at_obj22_apt1;
+unload_airplane_obj22_apt1 causes -obj22_moved_apn1;
+apn1 observes unload_airplane_obj22_apt1;
+
+executable unload_airplane_obj22_apt2 if B(apn1, in_obj22_apn1), B(apn1, at_apn1_apt2), B(apn1, obj22_moved_apn1), in_obj22_apn1, at_apn1_apt2, obj22_moved_apn1;
+unload_airplane_obj22_apt2 causes -in_obj22_apn1;
+unload_airplane_obj22_apt2 causes at_obj22_apt2;
+unload_airplane_obj22_apt2 causes -obj22_moved_apn1;
+apn1 observes unload_airplane_obj22_apt2;
+
+executable unload_airplane_obj23_apt1 if B(apn1, in_obj23_apn1), B(apn1, at_apn1_apt1), B(apn1, obj23_moved_apn1), in_obj23_apn1, at_apn1_apt1, obj23_moved_apn1;
+unload_airplane_obj23_apt1 causes -in_obj23_apn1;
+unload_airplane_obj23_apt1 causes at_obj23_apt1;
+unload_airplane_obj23_apt1 causes -obj23_moved_apn1;
+apn1 observes unload_airplane_obj23_apt1;
+
+executable unload_airplane_obj23_apt2 if B(apn1, in_obj23_apn1), B(apn1, at_apn1_apt2), B(apn1, obj23_moved_apn1), in_obj23_apn1, at_apn1_apt2, obj23_moved_apn1;
+unload_airplane_obj23_apt2 causes -in_obj23_apn1;
+unload_airplane_obj23_apt2 causes at_obj23_apt2;
+unload_airplane_obj23_apt2 causes -obj23_moved_apn1;
+apn1 observes unload_airplane_obj23_apt2;
+
+%%%%action fly-airplane(apt1, apt2)
+executable fly_airplane_apt1_apt2 if B(apn1, at_apn1_apt1), at_apn1_apt1;
+fly_airplane_apt1_apt2 causes -at_apn1_apt1;
+fly_airplane_apt1_apt2 causes at_apn1_apt2;
+fly_airplane_apt1_apt2 causes obj11_moved_apn1 if in_obj11_apn1;
+fly_airplane_apt1_apt2 causes obj12_moved_apn1 if in_obj12_apn1;
+fly_airplane_apt1_apt2 causes obj13_moved_apn1 if in_obj13_apn1;
+fly_airplane_apt1_apt2 causes obj21_moved_apn1 if in_obj21_apn1;
+fly_airplane_apt1_apt2 causes obj22_moved_apn1 if in_obj22_apn1;
+fly_airplane_apt1_apt2 causes obj23_moved_apn1 if in_obj23_apn1;
+apn1 observes fly_airplane_apt1_apt2;
+
+executable fly_airplane_apt2_apt1 if B(apn1, at_apn1_apt2), at_apn1_apt2;
+fly_airplane_apt2_apt1 causes -at_apn1_apt2;
+fly_airplane_apt2_apt1 causes at_apn1_apt1;
+fly_airplane_apt2_apt1 causes obj11_moved_apn1 if in_obj11_apn1;
+fly_airplane_apt2_apt1 causes obj12_moved_apn1 if in_obj12_apn1;
+fly_airplane_apt2_apt1 causes obj13_moved_apn1 if in_obj13_apn1;
+fly_airplane_apt2_apt1 causes obj21_moved_apn1 if in_obj21_apn1;
+fly_airplane_apt2_apt1 causes obj22_moved_apn1 if in_obj22_apn1;
+fly_airplane_apt2_apt1 causes obj23_moved_apn1 if in_obj23_apn1;
+apn1 observes fly_airplane_apt2_apt1;
+
+
+%action load-truck1(obj11, apt1);
+executable load_truck1_obj11_apt1 if B(tru1, at_obj11_apt1), B(tru1, at_tru1_apt1), at_obj11_apt1, at_tru1_apt1; 
+load_truck1_obj11_apt1 causes -at_obj11_apt1;
+load_truck1_obj11_apt1 causes in_obj11_tru1;
+tru1 observes load_truck1_obj11_apt1;
+
+executable load_truck1_obj12_apt1 if B(tru1, at_obj12_apt1), B(tru1, at_tru1_apt1), at_obj12_apt1, at_tru1_apt1; 
+load_truck1_obj12_apt1 causes -at_obj12_apt1;
+load_truck1_obj12_apt1 causes in_obj12_tru1;
+tru1 observes load_truck1_obj12_apt1;
+
+executable load_truck1_obj13_apt1 if B(tru1, at_obj13_apt1), B(tru1, at_tru1_apt1), at_obj13_apt1, at_tru1_apt1; 
+load_truck1_obj13_apt1 causes -at_obj13_apt1;
+load_truck1_obj13_apt1 causes in_obj13_tru1;
+tru1 observes load_truck1_obj13_apt1;
+
+executable load_truck1_obj21_apt1 if B(tru1, at_obj21_apt1), B(tru1, at_tru1_apt1), at_obj21_apt1, at_tru1_apt1; 
+load_truck1_obj21_apt1 causes -at_obj21_apt1;
+load_truck1_obj21_apt1 causes in_obj21_tru1;
+tru1 observes load_truck1_obj21_apt1;
+
+executable load_truck1_obj22_apt1 if B(tru1, at_obj22_apt1), B(tru1, at_tru1_apt1), at_obj22_apt1, at_tru1_apt1; 
+load_truck1_obj22_apt1 causes -at_obj22_apt1;
+load_truck1_obj22_apt1 causes in_obj22_tru1;
+tru1 observes load_truck1_obj22_apt1;
+
+executable load_truck1_obj23_apt1 if B(tru1, at_obj23_apt1), B(tru1, at_tru1_apt1), at_obj23_apt1, at_tru1_apt1; 
+load_truck1_obj23_apt1 causes -at_obj23_apt1;
+load_truck1_obj23_apt1 causes in_obj23_tru1;
+tru1 observes load_truck1_obj23_apt1;
+
+executable load_truck1_obj11_pos1 if B(tru1, at_obj11_pos1), B(tru1, at_tru1_pos1), at_obj11_pos1, at_tru1_pos1; 
+load_truck1_obj11_pos1 causes -at_obj11_pos1;
+load_truck1_obj11_pos1 causes in_obj11_tru1;
+tru1 observes load_truck1_obj11_pos1;
+
+executable load_truck1_obj12_pos1 if B(tru1, at_obj12_pos1), B(tru1, at_tru1_pos1), at_obj12_pos1, at_tru1_pos1; 
+load_truck1_obj12_pos1 causes -at_obj12_pos1;
+load_truck1_obj12_pos1 causes in_obj12_tru1;
+tru1 observes load_truck1_obj12_pos1;
+
+executable load_truck1_obj13_pos1 if B(tru1, at_obj13_pos1), B(tru1, at_tru1_pos1), at_obj13_pos1, at_tru1_pos1; 
+load_truck1_obj13_pos1 causes -at_obj13_pos1;
+load_truck1_obj13_pos1 causes in_obj13_tru1;
+tru1 observes load_truck1_obj13_pos1;
+
+executable load_truck1_obj21_pos1 if B(tru1, at_obj21_pos1), B(tru1, at_tru1_pos1), at_obj21_pos1, at_tru1_pos1; 
+load_truck1_obj21_pos1 causes -at_obj21_pos1;
+load_truck1_obj21_pos1 causes in_obj21_tru1;
+tru1 observes load_truck1_obj21_pos1;
+
+executable load_truck1_obj22_pos1 if B(tru1, at_obj22_pos1), B(tru1, at_tru1_pos1), at_obj22_pos1, at_tru1_pos1; 
+load_truck1_obj22_pos1 causes -at_obj22_pos1;
+load_truck1_obj22_pos1 causes in_obj22_tru1;
+tru1 observes load_truck1_obj22_pos1;
+
+executable load_truck1_obj23_pos1 if B(tru1, at_obj23_pos1), B(tru1, at_tru1_pos1), at_obj23_pos1, at_tru1_pos1; 
+load_truck1_obj23_pos1 causes -at_obj23_pos1;
+load_truck1_obj23_pos1 causes in_obj23_tru1;
+tru1 observes load_truck1_obj23_pos1;
+
+executable load_truck2_obj11_apt2 if B(tru2, at_obj11_apt2), B(tru2, at_tru2_apt2), at_obj11_apt2, at_tru2_apt2; 
+load_truck2_obj11_apt2 causes -at_obj11_apt2;
+load_truck2_obj11_apt2 causes in_obj11_tru2;
+tru2 observes load_truck2_obj11_apt2;
+
+executable load_truck2_obj12_apt2 if B(tru2, at_obj12_apt2), B(tru2, at_tru2_apt2), at_obj12_apt2, at_tru2_apt2; 
+load_truck2_obj12_apt2 causes -at_obj12_apt2;
+load_truck2_obj12_apt2 causes in_obj12_tru2;
+tru2 observes load_truck2_obj12_apt2;
+
+executable load_truck2_obj13_apt2 if B(tru2, at_obj13_apt2), B(tru2, at_tru2_apt2), at_obj13_apt2, at_tru2_apt2; 
+load_truck2_obj13_apt2 causes -at_obj13_apt2;
+load_truck2_obj13_apt2 causes in_obj13_tru2;
+tru2 observes load_truck2_obj13_apt2;
+
+executable load_truck2_obj21_apt2 if B(tru2, at_obj21_apt2), B(tru2, at_tru2_apt2), at_obj21_apt2, at_tru2_apt2; 
+load_truck2_obj21_apt2 causes -at_obj21_apt2;
+load_truck2_obj21_apt2 causes in_obj21_tru2;
+tru2 observes load_truck2_obj21_apt2;
+
+executable load_truck2_obj22_apt2 if B(tru2, at_obj22_apt2), B(tru2, at_tru2_apt2), at_obj22_apt2, at_tru2_apt2; 
+load_truck2_obj22_apt2 causes -at_obj22_apt2;
+load_truck2_obj22_apt2 causes in_obj22_tru2;
+tru2 observes load_truck2_obj22_apt2;
+
+executable load_truck2_obj23_apt2 if B(tru2, at_obj23_apt2), B(tru2, at_tru2_apt2), at_obj23_apt2, at_tru2_apt2; 
+load_truck2_obj23_apt2 causes -at_obj23_apt2;
+load_truck2_obj23_apt2 causes in_obj23_tru2;
+tru2 observes load_truck2_obj23_apt2;
+
+executable load_truck2_obj11_pos2 if B(tru2, at_obj11_pos2), B(tru2, at_tru2_pos2), at_obj11_pos2, at_tru2_pos2; 
+load_truck2_obj11_pos2 causes -at_obj11_pos2;
+load_truck2_obj11_pos2 causes in_obj11_tru2;
+tru2 observes load_truck2_obj11_pos2;
+
+executable load_truck2_obj12_pos2 if B(tru2, at_obj12_pos2), B(tru2, at_tru2_pos2), at_obj12_pos2, at_tru2_pos2; 
+load_truck2_obj12_pos2 causes -at_obj12_pos2;
+load_truck2_obj12_pos2 causes in_obj12_tru2;
+tru2 observes load_truck2_obj12_pos2;
+
+executable load_truck2_obj13_pos2 if B(tru2, at_obj13_pos2), B(tru2, at_tru2_pos2), at_obj13_pos2, at_tru2_pos2; 
+load_truck2_obj13_pos2 causes -at_obj13_pos2;
+load_truck2_obj13_pos2 causes in_obj13_tru2;
+tru2 observes load_truck2_obj13_pos2;
+
+executable load_truck2_obj21_pos2 if B(tru2, at_obj21_pos2), B(tru2, at_tru2_pos2), at_obj21_pos2, at_tru2_pos2; 
+load_truck2_obj21_pos2 causes -at_obj21_pos2;
+load_truck2_obj21_pos2 causes in_obj21_tru2;
+tru2 observes load_truck2_obj21_pos2;
+
+executable load_truck2_obj22_pos2 if B(tru2, at_obj22_pos2), B(tru2, at_tru2_pos2), at_obj22_pos2, at_tru2_pos2; 
+load_truck2_obj22_pos2 causes -at_obj22_pos2;
+load_truck2_obj22_pos2 causes in_obj22_tru2;
+tru2 observes load_truck2_obj22_pos2;
+
+executable load_truck2_obj23_pos2 if B(tru2, at_obj23_pos2), B(tru2, at_tru2_pos2), at_obj23_pos2, at_tru2_pos2; 
+load_truck2_obj23_pos2 causes -at_obj23_pos2;
+load_truck2_obj23_pos2 causes in_obj23_tru2;
+tru2 observes load_truck2_obj23_pos2;
+
+%%%action unload-truck1(obj11, apt1)
+executable unload_truck1_obj11_apt1 if B(tru1, at_tru1_apt1), B(tru1, in_obj11_tru1), B(tru1, obj11_moved_tru1), at_tru1_apt1, in_obj11_tru1, obj11_moved_tru1; 
+unload_truck1_obj11_apt1 causes -in_obj11_tru1;
+unload_truck1_obj11_apt1 causes at_obj11_apt1;
+unload_truck1_obj11_apt1 causes -obj11_moved_tru1;
+tru1 observes unload_truck1_obj11_apt1;
+
+executable unload_truck1_obj12_apt1 if B(tru1, at_tru1_apt1), B(tru1, in_obj12_tru1), B(tru1, obj12_moved_tru1), at_tru1_apt1, in_obj12_tru1, obj12_moved_tru1; 
+unload_truck1_obj12_apt1 causes -in_obj12_tru1;
+unload_truck1_obj12_apt1 causes at_obj12_apt1;
+unload_truck1_obj12_apt1 causes -obj12_moved_tru1;
+tru1 observes unload_truck1_obj12_apt1;
+
+executable unload_truck1_obj13_apt1 if B(tru1, at_tru1_apt1), B(tru1, in_obj13_tru1), B(tru1, obj13_moved_tru1), at_tru1_apt1, in_obj13_tru1, obj13_moved_tru1; 
+unload_truck1_obj13_apt1 causes -in_obj13_tru1;
+unload_truck1_obj13_apt1 causes at_obj13_apt1;
+unload_truck1_obj13_apt1 causes -obj13_moved_tru1;
+tru1 observes unload_truck1_obj13_apt1;
+
+executable unload_truck1_obj21_apt1 if B(tru1, at_tru1_apt1), B(tru1, in_obj21_tru1), B(tru1, obj21_moved_tru1), at_tru1_apt1, in_obj21_tru1, obj21_moved_tru1; 
+unload_truck1_obj21_apt1 causes -in_obj21_tru1;
+unload_truck1_obj21_apt1 causes at_obj21_apt1;
+unload_truck1_obj21_apt1 causes -obj21_moved_tru1;
+tru1 observes unload_truck1_obj21_apt1;
+
+executable unload_truck1_obj22_apt1 if B(tru1, at_tru1_apt1), B(tru1, in_obj22_tru1), B(tru1, obj22_moved_tru1), at_tru1_apt1, in_obj22_tru1, obj22_moved_tru1; 
+unload_truck1_obj22_apt1 causes -in_obj22_tru1;
+unload_truck1_obj22_apt1 causes at_obj22_apt1;
+unload_truck1_obj22_apt1 causes -obj22_moved_tru1;
+tru1 observes unload_truck1_obj22_apt1;
+
+executable unload_truck1_obj23_apt1 if B(tru1, at_tru1_apt1), B(tru1, in_obj23_tru1), B(tru1, obj23_moved_tru1), at_tru1_apt1, in_obj23_tru1, obj23_moved_tru1; 
+unload_truck1_obj23_apt1 causes -in_obj23_tru1;
+unload_truck1_obj23_apt1 causes at_obj23_apt1;
+unload_truck1_obj23_apt1 causes -obj23_moved_tru1;
+tru1 observes unload_truck1_obj23_apt1;
+
+executable unload_truck1_obj11_pos1 if B(tru1, at_tru1_pos1), B(tru1, in_obj11_tru1), B(tru1, obj11_moved_tru1), at_tru1_pos1, in_obj11_tru1, obj11_moved_tru1; 
+unload_truck1_obj11_pos1 causes -in_obj11_tru1;
+unload_truck1_obj11_pos1 causes at_obj11_pos1;
+unload_truck1_obj11_pos1 causes -obj11_moved_tru1;
+tru1 observes unload_truck1_obj11_pos1;
+
+executable unload_truck1_obj12_pos1 if B(tru1, at_tru1_pos1), B(tru1, in_obj12_tru1), B(tru1, obj12_moved_tru1), at_tru1_pos1, in_obj12_tru1, obj12_moved_tru1; 
+unload_truck1_obj12_pos1 causes -in_obj12_tru1;
+unload_truck1_obj12_pos1 causes at_obj12_pos1;
+unload_truck1_obj12_pos1 causes -obj12_moved_tru1;
+tru1 observes unload_truck1_obj12_pos1;
+
+executable unload_truck1_obj13_pos1 if B(tru1, at_tru1_pos1), B(tru1, in_obj13_tru1), B(tru1, obj13_moved_tru1), at_tru1_pos1, in_obj13_tru1, obj13_moved_tru1; 
+unload_truck1_obj13_pos1 causes -in_obj13_tru1;
+unload_truck1_obj13_pos1 causes at_obj13_pos1;
+unload_truck1_obj13_pos1 causes -obj13_moved_tru1;
+tru1 observes unload_truck1_obj13_pos1;
+
+executable unload_truck1_obj21_pos1 if B(tru1, at_tru1_pos1), B(tru1, in_obj21_tru1), B(tru1, obj21_moved_tru1), at_tru1_pos1, in_obj21_tru1, obj21_moved_tru1; 
+unload_truck1_obj21_pos1 causes -in_obj21_tru1;
+unload_truck1_obj21_pos1 causes at_obj21_pos1;
+unload_truck1_obj21_pos1 causes -obj21_moved_tru1;
+tru1 observes unload_truck1_obj21_pos1;
+
+executable unload_truck1_obj22_pos1 if B(tru1, at_tru1_pos1), B(tru1, in_obj22_tru1), B(tru1, obj22_moved_tru1), at_tru1_pos1, in_obj22_tru1, obj22_moved_tru1; 
+unload_truck1_obj22_pos1 causes -in_obj22_tru1;
+unload_truck1_obj22_pos1 causes at_obj22_pos1;
+unload_truck1_obj22_pos1 causes -obj22_moved_tru1;
+tru1 observes unload_truck1_obj22_pos1;
+
+executable unload_truck1_obj23_pos1 if B(tru1, at_tru1_pos1), B(tru1, in_obj23_tru1), B(tru1, obj23_moved_tru1), at_tru1_pos1, in_obj23_tru1, obj23_moved_tru1; 
+unload_truck1_obj23_pos1 causes -in_obj23_tru1;
+unload_truck1_obj23_pos1 causes at_obj23_pos1;
+unload_truck1_obj23_pos1 causes -obj23_moved_tru1;
+tru1 observes unload_truck1_obj23_pos1;
+
+executable unload_truck2_obj11_apt2 if B(tru2, at_tru2_apt2), B(tru2, in_obj11_tru2), B(tru2, obj11_moved_tru2), at_tru2_apt2, in_obj11_tru2, obj11_moved_tru2; 
+unload_truck2_obj11_apt2 causes -in_obj11_tru2;
+unload_truck2_obj11_apt2 causes at_obj11_apt2;
+unload_truck2_obj11_apt2 causes -obj11_moved_tru2;
+tru2 observes unload_truck2_obj11_apt2;
+
+executable unload_truck2_obj12_apt2 if B(tru2, at_tru2_apt2), B(tru2, in_obj12_tru2), B(tru2, obj12_moved_tru2), at_tru2_apt2, in_obj12_tru2, obj12_moved_tru2; 
+unload_truck2_obj12_apt2 causes -in_obj12_tru2;
+unload_truck2_obj12_apt2 causes at_obj12_apt2;
+unload_truck2_obj12_apt2 causes -obj12_moved_tru2;
+tru2 observes unload_truck2_obj12_apt2;
+
+executable unload_truck2_obj13_apt2 if B(tru2, at_tru2_apt2), B(tru2, in_obj13_tru2), B(tru2, obj13_moved_tru2), at_tru2_apt2, in_obj13_tru2, obj13_moved_tru2; 
+unload_truck2_obj13_apt2 causes -in_obj13_tru2;
+unload_truck2_obj13_apt2 causes at_obj13_apt2;
+unload_truck2_obj13_apt2 causes -obj13_moved_tru2;
+tru2 observes unload_truck2_obj13_apt2;
+
+executable unload_truck2_obj21_apt2 if B(tru2, at_tru2_apt2), B(tru2, in_obj21_tru2), B(tru2, obj21_moved_tru2), at_tru2_apt2, in_obj21_tru2, obj21_moved_tru2; 
+unload_truck2_obj21_apt2 causes -in_obj21_tru2;
+unload_truck2_obj21_apt2 causes at_obj21_apt2;
+unload_truck2_obj21_apt2 causes -obj21_moved_tru2;
+tru2 observes unload_truck2_obj21_apt2;
+
+executable unload_truck2_obj22_apt2 if B(tru2, at_tru2_apt2), B(tru2, in_obj22_tru2), B(tru2, obj22_moved_tru2), at_tru2_apt2, in_obj22_tru2, obj22_moved_tru2; 
+unload_truck2_obj22_apt2 causes -in_obj22_tru2;
+unload_truck2_obj22_apt2 causes at_obj22_apt2;
+unload_truck2_obj22_apt2 causes -obj22_moved_tru2;
+tru2 observes unload_truck2_obj22_apt2;
+
+executable unload_truck2_obj23_apt2 if B(tru2, at_tru2_apt2), B(tru2, in_obj23_tru2), B(tru2, obj23_moved_tru2), at_tru2_apt2, in_obj23_tru2, obj23_moved_tru2; 
+unload_truck2_obj23_apt2 causes -in_obj23_tru2;
+unload_truck2_obj23_apt2 causes at_obj23_apt2;
+unload_truck2_obj23_apt2 causes -obj23_moved_tru2;
+tru2 observes unload_truck2_obj23_apt2;
+
+executable unload_truck2_obj11_pos2 if B(tru2, at_tru2_pos2), B(tru2, in_obj11_tru2), B(tru2, obj11_moved_tru2), at_tru2_pos2, in_obj11_tru2, obj11_moved_tru2; 
+unload_truck2_obj11_pos2 causes -in_obj11_tru2;
+unload_truck2_obj11_pos2 causes at_obj11_pos2;
+unload_truck2_obj11_pos2 causes -obj11_moved_tru2;
+tru2 observes unload_truck2_obj11_pos2;
+
+executable unload_truck2_obj12_pos2 if B(tru2, at_tru2_pos2), B(tru2, in_obj12_tru2), B(tru2, obj12_moved_tru2), at_tru2_pos2, in_obj12_tru2, obj12_moved_tru2; 
+unload_truck2_obj12_pos2 causes -in_obj12_tru2;
+unload_truck2_obj12_pos2 causes at_obj12_pos2;
+unload_truck2_obj12_pos2 causes -obj12_moved_tru2;
+tru2 observes unload_truck2_obj12_pos2;
+
+executable unload_truck2_obj13_pos2 if B(tru2, at_tru2_pos2), B(tru2, in_obj13_tru2), B(tru2, obj13_moved_tru2), at_tru2_pos2, in_obj13_tru2, obj13_moved_tru2; 
+unload_truck2_obj13_pos2 causes -in_obj13_tru2;
+unload_truck2_obj13_pos2 causes at_obj13_pos2;
+unload_truck2_obj13_pos2 causes -obj13_moved_tru2;
+tru2 observes unload_truck2_obj13_pos2;
+
+executable unload_truck2_obj21_pos2 if B(tru2, at_tru2_pos2), B(tru2, in_obj21_tru2), B(tru2, obj21_moved_tru2), at_tru2_pos2, in_obj21_tru2, obj21_moved_tru2; 
+unload_truck2_obj21_pos2 causes -in_obj21_tru2;
+unload_truck2_obj21_pos2 causes at_obj21_pos2;
+unload_truck2_obj21_pos2 causes -obj21_moved_tru2;
+tru2 observes unload_truck2_obj21_pos2;
+
+executable unload_truck2_obj22_pos2 if B(tru2, at_tru2_pos2), B(tru2, in_obj22_tru2), B(tru2, obj22_moved_tru2), at_tru2_pos2, in_obj22_tru2, obj22_moved_tru2; 
+unload_truck2_obj22_pos2 causes -in_obj22_tru2;
+unload_truck2_obj22_pos2 causes at_obj22_pos2;
+unload_truck2_obj22_pos2 causes -obj22_moved_tru2;
+tru2 observes unload_truck2_obj22_pos2;
+
+executable unload_truck2_obj23_pos2 if B(tru2, at_tru2_pos2), B(tru2, in_obj23_tru2), B(tru2, obj23_moved_tru2), at_tru2_pos2, in_obj23_tru2, obj23_moved_tru2; 
+unload_truck2_obj23_pos2 causes -in_obj23_tru2;
+unload_truck2_obj23_pos2 causes at_obj23_pos2;
+unload_truck2_obj23_pos2 causes -obj23_moved_tru2;
+tru2 observes unload_truck2_obj23_pos2;
+
+%%%action drive-truck1(pos1, apt1)
+executable drive_truck1_pos1_apt1 if B(tru1, at_tru1_pos1), at_tru1_pos1;
+drive_truck1_pos1_apt1 causes -at_tru1_pos1;
+drive_truck1_pos1_apt1 causes at_tru1_apt1;
+drive_truck1_pos1_apt1 causes obj11_moved_tru1 if in_obj11_tru1;
+drive_truck1_pos1_apt1 causes obj12_moved_tru1 if in_obj12_tru1;
+drive_truck1_pos1_apt1 causes obj13_moved_tru1 if in_obj13_tru1;
+drive_truck1_pos1_apt1 causes obj21_moved_tru1 if in_obj21_tru1;
+drive_truck1_pos1_apt1 causes obj22_moved_tru1 if in_obj22_tru1;
+drive_truck1_pos1_apt1 causes obj23_moved_tru1 if in_obj23_tru1;
+tru1 observes drive_truck1_pos1_apt1;
+
+executable drive_truck1_apt1_pos1 if B(tru1, at_tru1_apt1), at_tru1_apt1;
+drive_truck1_apt1_pos1 causes -at_tru1_apt1;
+drive_truck1_apt1_pos1 causes at_tru1_pos1;
+drive_truck1_apt1_pos1 causes obj11_moved_tru1 if in_obj11_tru1;
+drive_truck1_apt1_pos1 causes obj12_moved_tru1 if in_obj12_tru1;
+drive_truck1_apt1_pos1 causes obj13_moved_tru1 if in_obj13_tru1;
+drive_truck1_apt1_pos1 causes obj21_moved_tru1 if in_obj21_tru1;
+drive_truck1_apt1_pos1 causes obj22_moved_tru1 if in_obj22_tru1;
+drive_truck1_apt1_pos1 causes obj23_moved_tru1 if in_obj23_tru1;
+tru1 observes drive_truck1_apt1_pos1;
+
+executable drive_truck2_pos2_apt2 if B(tru2, at_tru2_pos2), at_tru2_pos2;
+drive_truck2_pos2_apt2 causes -at_tru2_pos2;
+drive_truck2_pos2_apt2 causes at_tru2_apt2;
+drive_truck2_pos2_apt2 causes obj11_moved_tru2 if in_obj11_tru2;
+drive_truck2_pos2_apt2 causes obj12_moved_tru2 if in_obj12_tru2;
+drive_truck2_pos2_apt2 causes obj13_moved_tru2 if in_obj13_tru2;
+drive_truck2_pos2_apt2 causes obj21_moved_tru2 if in_obj21_tru2;
+drive_truck2_pos2_apt2 causes obj22_moved_tru2 if in_obj22_tru2;
+drive_truck2_pos2_apt2 causes obj23_moved_tru2 if in_obj23_tru2;
+tru2 observes drive_truck2_pos2_apt2;
+
+executable drive_truck2_apt2_pos2 if B(tru2, at_tru2_apt2), at_tru2_apt2;
+drive_truck2_apt2_pos2 causes -at_tru2_apt2;
+drive_truck2_apt2_pos2 causes at_tru2_pos2;
+drive_truck2_apt2_pos2 causes obj11_moved_tru2 if in_obj11_tru2;
+drive_truck2_apt2_pos2 causes obj12_moved_tru2 if in_obj12_tru2;
+drive_truck2_apt2_pos2 causes obj13_moved_tru2 if in_obj13_tru2;
+drive_truck2_apt2_pos2 causes obj21_moved_tru2 if in_obj21_tru2;
+drive_truck2_apt2_pos2 causes obj22_moved_tru2 if in_obj22_tru2;
+drive_truck2_apt2_pos2 causes obj23_moved_tru2 if in_obj23_tru2;
+tru2 observes drive_truck2_apt2_pos2;
+
+%%%addition sensing actions
+executable sense_airplane_apt1 if B(apn1, at_apn1_apt1), at_apn1_apt1;
+sense_airplane_apt1 determines at_obj11_apt1;
+sense_airplane_apt1 determines at_obj12_apt1;
+sense_airplane_apt1 determines at_obj13_apt1;
+sense_airplane_apt1 determines at_obj21_apt1;
+sense_airplane_apt1 determines at_obj22_apt1;
+sense_airplane_apt1 determines at_obj23_apt1;
+sense_airplane_apt1 determines obj11_moved_apn1;
+sense_airplane_apt1 determines obj12_moved_apn1;
+sense_airplane_apt1 determines obj13_moved_apn1;
+sense_airplane_apt1 determines obj21_moved_apn1;
+sense_airplane_apt1 determines obj22_moved_apn1;
+sense_airplane_apt1 determines obj23_moved_apn1;
+apn1 observes sense_airplane_apt1;
+
+executable sense_airplane_apt2 if B(apn1, at_apn1_apt2), at_apn1_apt2;
+sense_airplane_apt2 determines at_obj11_apt2;
+sense_airplane_apt2 determines at_obj12_apt2;
+sense_airplane_apt2 determines at_obj13_apt2;
+sense_airplane_apt2 determines at_obj21_apt2;
+sense_airplane_apt2 determines at_obj22_apt2;
+sense_airplane_apt2 determines at_obj23_apt2;
+sense_airplane_apt2 determines obj11_moved_apn1;
+sense_airplane_apt2 determines obj12_moved_apn1;
+sense_airplane_apt2 determines obj13_moved_apn1;
+sense_airplane_apt2 determines obj21_moved_apn1;
+sense_airplane_apt2 determines obj22_moved_apn1;
+sense_airplane_apt2 determines obj23_moved_apn1;
+apn1 observes sense_airplane_apt2;
+
+executable sense_truck1_apt1 if B(tru1, at_tru1_apt1), at_tru1_apt1;
+sense_truck1_apt1 determines at_obj11_apt1;
+sense_truck1_apt1 determines at_obj12_apt1;
+sense_truck1_apt1 determines at_obj13_apt1;
+sense_truck1_apt1 determines at_obj21_apt1;
+sense_truck1_apt1 determines at_obj22_apt1;
+sense_truck1_apt1 determines at_obj23_apt1;
+sense_truck1_apt1 determines obj11_moved_tru1;
+sense_truck1_apt1 determines obj12_moved_tru1;
+sense_truck1_apt1 determines obj13_moved_tru1;
+sense_truck1_apt1 determines obj21_moved_tru1;
+sense_truck1_apt1 determines obj22_moved_tru1;
+sense_truck1_apt1 determines obj23_moved_tru1;
+tru1 observes sense_truck1_apt1;
+
+executable sense_truck1_pos1 if B(tru1, at_tru1_pos1), at_tru1_pos1;
+sense_truck1_pos1 determines at_obj11_pos1;
+sense_truck1_pos1 determines at_obj12_pos1;
+sense_truck1_pos1 determines at_obj13_pos1;
+sense_truck1_pos1 determines at_obj21_pos1;
+sense_truck1_pos1 determines at_obj22_pos1;
+sense_truck1_pos1 determines at_obj23_pos1;
+sense_truck1_pos1 determines obj11_moved_tru1;
+sense_truck1_pos1 determines obj12_moved_tru1;
+sense_truck1_pos1 determines obj13_moved_tru1;
+sense_truck1_pos1 determines obj21_moved_tru1;
+sense_truck1_pos1 determines obj22_moved_tru1;
+sense_truck1_pos1 determines obj23_moved_tru1;
+tru1 observes sense_truck1_pos1;
+
+executable sense_truck2_apt2 if B(tru2, at_tru2_apt2), at_tru2_apt2;
+sense_truck2_apt2 determines at_obj11_apt2;
+sense_truck2_apt2 determines at_obj12_apt2;
+sense_truck2_apt2 determines at_obj13_apt2;
+sense_truck2_apt2 determines at_obj21_apt2;
+sense_truck2_apt2 determines at_obj22_apt2;
+sense_truck2_apt2 determines at_obj23_apt2;
+sense_truck2_apt2 determines obj11_moved_tru2;
+sense_truck2_apt2 determines obj12_moved_tru2;
+sense_truck2_apt2 determines obj13_moved_tru2;
+sense_truck2_apt2 determines obj21_moved_tru2;
+sense_truck2_apt2 determines obj22_moved_tru2;
+sense_truck2_apt2 determines obj23_moved_tru2;
+tru2 observes sense_truck2_apt2;
+
+executable sense_truck2_pos2 if B(tru2, at_tru2_pos2), at_tru2_pos2;
+sense_truck2_pos2 determines at_obj11_pos2;
+sense_truck2_pos2 determines at_obj12_pos2;
+sense_truck2_pos2 determines at_obj13_pos2;
+sense_truck2_pos2 determines at_obj21_pos2;
+sense_truck2_pos2 determines at_obj22_pos2;
+sense_truck2_pos2 determines at_obj23_pos2;
+sense_truck2_pos2 determines obj11_moved_tru2;
+sense_truck2_pos2 determines obj12_moved_tru2;
+sense_truck2_pos2 determines obj13_moved_tru2;
+sense_truck2_pos2 determines obj21_moved_tru2;
+sense_truck2_pos2 determines obj22_moved_tru2;
+sense_truck2_pos2 determines obj23_moved_tru2;
+tru2 observes sense_truck2_pos2;
+
+
+initially at_apn1_apt1, -at_apn1_apt2, -at_obj11_apt1, -at_obj11_apt2, at_obj11_pos1, -at_obj11_pos2, -at_obj12_apt1, -at_obj12_apt2, at_obj12_pos1, -at_obj12_pos2, -at_obj13_apt1, -at_obj13_apt2, at_obj13_pos1, -at_obj13_pos2, -at_obj21_apt1, -at_obj21_apt2, -at_obj21_pos1, at_obj21_pos2, -at_obj22_apt1, -at_obj22_apt2, -at_obj22_pos1, at_obj22_pos2, -at_obj23_apt1, -at_obj23_apt2, -at_obj23_pos1, at_obj23_pos2, -at_tru1_apt1, at_tru1_pos1, -at_tru2_apt2, at_tru2_pos2, -in_obj11_apn1, -in_obj11_tru1, -in_obj11_tru2, -in_obj12_apn1, -in_obj12_tru1, -in_obj12_tru2, -in_obj13_apn1, -in_obj13_tru1, -in_obj13_tru2, -in_obj21_apn1, -in_obj21_tru1, -in_obj21_tru2, -in_obj22_apn1, -in_obj22_tru1, -in_obj22_tru2, -in_obj23_apn1, -in_obj23_tru1, -in_obj23_tru2, -obj11_moved_apn1, -obj12_moved_apn1, -obj13_moved_apn1, -obj21_moved_apn1, -obj22_moved_apn1, -obj23_moved_apn1, -obj11_moved_tru1, -obj12_moved_tru1, -obj13_moved_tru1, -obj21_moved_tru1, -obj22_moved_tru1, -obj23_moved_tru1, -obj11_moved_tru2, -obj12_moved_tru2, -obj13_moved_tru2, -obj21_moved_tru2, -obj22_moved_tru2, -obj23_moved_tru2;
+
+initially C([apn1,tru1,tru2], at_apn1_apt1); 
+initially C([apn1,tru1,tru2], -at_apn1_apt2); 
+initially C([apn1,tru1,tru2], -at_obj11_apt1); 
+initially C([apn1,tru1,tru2], -at_obj11_apt2); 
+initially C([apn1,tru1,tru2], at_obj11_pos1); 
+initially C([apn1,tru1,tru2], -at_obj11_pos2); 
+initially C([apn1,tru1,tru2], -at_obj12_apt1); 
+initially C([apn1,tru1,tru2], -at_obj12_apt2); 
+initially C([apn1,tru1,tru2], at_obj12_pos1); 
+initially C([apn1,tru1,tru2], -at_obj12_pos2); 
+initially C([apn1,tru1,tru2], -at_obj13_apt1); 
+initially C([apn1,tru1,tru2], -at_obj13_apt2); 
+initially C([apn1,tru1,tru2], at_obj13_pos1); 
+initially C([apn1,tru1,tru2], -at_obj13_pos2); 
+initially C([apn1,tru1,tru2], -at_obj21_apt1); 
+initially C([apn1,tru1,tru2], -at_obj21_apt2); 
+initially C([apn1,tru1,tru2], -at_obj21_pos1); 
+initially C([apn1,tru1,tru2], at_obj21_pos2); 
+initially C([apn1,tru1,tru2], -at_obj22_apt1); 
+initially C([apn1,tru1,tru2], -at_obj22_apt2); 
+initially C([apn1,tru1,tru2], -at_obj22_pos1); 
+initially C([apn1,tru1,tru2], at_obj22_pos2); 
+initially C([apn1,tru1,tru2], -at_obj23_apt1); 
+initially C([apn1,tru1,tru2], -at_obj23_apt2); 
+initially C([apn1,tru1,tru2], -at_obj23_pos1); 
+initially C([apn1,tru1,tru2], at_obj23_pos2); 
+initially C([apn1,tru1,tru2], -at_tru1_apt1); 
+initially C([apn1,tru1,tru2], at_tru1_pos1); 
+initially C([apn1,tru1,tru2], -at_tru2_apt2); 
+initially C([apn1,tru1,tru2], at_tru2_pos2);  
+initially C([apn1,tru1,tru2], -in_obj11_apn1); 
+initially C([apn1,tru1,tru2], -in_obj11_tru1); 
+initially C([apn1,tru1,tru2], -in_obj11_tru2); 
+initially C([apn1,tru1,tru2], -in_obj12_apn1); 
+initially C([apn1,tru1,tru2], -in_obj12_tru1); 
+initially C([apn1,tru1,tru2], -in_obj12_tru2); 
+initially C([apn1,tru1,tru2], -in_obj13_apn1); 
+initially C([apn1,tru1,tru2], -in_obj13_tru1); 
+initially C([apn1,tru1,tru2], -in_obj13_tru2); 
+initially C([apn1,tru1,tru2], -in_obj21_apn1); 
+initially C([apn1,tru1,tru2], -in_obj21_tru1); 
+initially C([apn1,tru1,tru2], -in_obj21_tru2); 
+initially C([apn1,tru1,tru2], -in_obj22_apn1); 
+initially C([apn1,tru1,tru2], -in_obj22_tru1); 
+initially C([apn1,tru1,tru2], -in_obj22_tru2); 
+initially C([apn1,tru1,tru2], -in_obj23_apn1); 
+initially C([apn1,tru1,tru2], -in_obj23_tru1); 
+initially C([apn1,tru1,tru2], -in_obj23_tru2);
+initially C([apn1,tru1,tru2], -obj11_moved_apn1);
+initially C([apn1,tru1,tru2], -obj12_moved_apn1);
+initially C([apn1,tru1,tru2], -obj13_moved_apn1);
+initially C([apn1,tru1,tru2], -obj21_moved_apn1);
+initially C([apn1,tru1,tru2], -obj22_moved_apn1);
+initially C([apn1,tru1,tru2], -obj23_moved_apn1);
+
+initially C([apn1,tru1,tru2], -obj11_moved_tru1);
+initially C([apn1,tru1,tru2], -obj12_moved_tru1);
+initially C([apn1,tru1,tru2], -obj13_moved_tru1);
+initially C([apn1,tru1,tru2], -obj21_moved_tru1);
+initially C([apn1,tru1,tru2], -obj22_moved_tru1);
+initially C([apn1,tru1,tru2], -obj23_moved_tru1);
+
+initially C([apn1,tru1,tru2], -obj11_moved_tru2);
+initially C([apn1,tru1,tru2], -obj12_moved_tru2);
+initially C([apn1,tru1,tru2], -obj13_moved_tru2);
+initially C([apn1,tru1,tru2], -obj21_moved_tru2);
+initially C([apn1,tru1,tru2], -obj22_moved_tru2);
+initially C([apn1,tru1,tru2], -obj23_moved_tru2);
+
+goal at_obj13_apt1;

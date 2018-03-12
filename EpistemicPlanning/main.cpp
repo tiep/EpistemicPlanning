@@ -5,6 +5,8 @@
 #include "planner.h"
 #include "kstate.h"
 #include "kripke.h"
+#include <stdio.h>
+#include <string.h>
 
 #define VERSION "1.2"
 #define DEBUG
@@ -21,7 +23,7 @@ int main(int argc, char **argv)
   int i;
   Planner planner(&reader,&timer);
 
-  cout << "CPA+ version " << VERSION << 
+  cout << "CPA+ version " << VERSION <<
 	" - Built date: " << BUILT_DATE << endl;
 
   if (argc < 2)
@@ -31,6 +33,20 @@ int main(int argc, char **argv)
   while (i < argc) {
     if (strcmp(argv[i],"-pc") == 0) {
 	  planner.m_semantics = PC;
+    }
+    else if (strcmp(argv[i],"-debug") == 0) {
+        cout << " debug is on " << endl;
+        planner.debug = true;
+    }
+    else if (strcmp(argv[i],"-mpg") == 0){
+        cout << " search with planning graph heuristic " << endl;
+        planner.m_heuristic = PLANNINGGRAPH;
+        planner.useHeuristic = true;
+    }
+    else if (strcmp(argv[i],"-spg") == 0){
+        cout << " search with planning graph heuristic " << endl;
+        planner.m_heuristic = SUMPLANNINGGRAPH;
+        planner.useHeuristic = true;
     }
     else if (strcmp(argv[i],"-h") == 0) {
 	  cout << " search with heuristic " << endl;
@@ -49,7 +65,7 @@ int main(int argc, char **argv)
       i++;
 
       while (i < argc && argv[i][0] != '-') {
-		planner.m_plan.push_back(string(argv[i++]));	
+		planner.m_plan.push_back(string(argv[i++]));
       }
     }
     else if (strcmp(argv[i],"-p") == 0) {
@@ -58,7 +74,7 @@ int main(int argc, char **argv)
     else if (strcmp(argv[i],"-o") == 0) {
       planner.m_output_decisive = true;
     }
-    else 
+    else
       print_usage(argv[0]);
     i++;
   }
@@ -70,9 +86,9 @@ int main(int argc, char **argv)
 
   timer.start(READ_TIMER);
   reader.read();
-  reader.print();
+  if(planner.debug) reader.print();
   timer.end(READ_TIMER);
-  planner.main();	
+  planner.main();
 
   exit(0);
 }

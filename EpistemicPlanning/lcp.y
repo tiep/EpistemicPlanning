@@ -411,6 +411,13 @@ LEFT_PAREN NEGATION belief_formula RIGHT_PAREN{
    $$->bfOperator = BFNOT;
 }
 |
+LEFT_PAREN belief_formula RIGHT_PAREN{
+    $$ = new BFNode;
+    $$->node_type = propForm;
+    $$->bfnode1 = $2;
+    $$->bfOperator = NONE;
+}
+|
 E LEFT_PAREN LEFT_BRAC agent_list RIGHT_BRAC COMMA belief_formula RIGHT_PAREN {
    $$ = new BFNode;
    $$->node_type = EForm;

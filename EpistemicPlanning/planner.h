@@ -9,15 +9,21 @@
 #include "kstate.h"
 #include "kedge.h"
 #include "kripke.h"
+#include "planninggraph.h"
+
+
 
 /***********************************************************************
  Other classes used in Planner
 ************************************************************************/
 typedef list<string> RawPlan;
 class Planner;
+class PlanningGraph;
+
 //for searching
 class CKripke {
 	friend class Planner;
+    friend class PlanningGraph;
 protected:
     Kripke* k;
     vector<Kripke*> ks;
@@ -38,10 +44,11 @@ public:
     vector<Kripke*> get_result();
     vector<string> get_path();     
     bool satisfy();  
-    int satisfywithprior();
+    int satisfywithprior(); //return how many sub-goals are satisfied already
     CKripke* next_ckripke(KAction a);
     void set_old(CKripke*);
     CKripke* get_old();
+    int lengthOfPlanningGraph(); //return the maximal length of Planning Graphs; each of which is a PlanningGraph of a Kripkek in ks
 };
 typedef queue<CKripke*> CKripkeQueue;
 typedef vector<Kripke> KripkeList;
@@ -60,10 +67,11 @@ struct node
 class Priority_Queue
 {
     private:
-        node *front;
-        Planner* planner;
+    
         
     public:
+        node *front;
+        Planner* planner;
         Priority_Queue(Planner* pl)
         {
             front = NULL;
@@ -72,9 +80,15 @@ class Priority_Queue
         /*
          * Insert into Priority Queue
          */
-        void insert(CKripke* item)
+        void insert(CKripke* item, bool debug)
         {
-			int priority = item->satisfywithprior();
+			int priority = item->lengthOfPlanningGraph();
+            if(debug){
+                cout << "---->>> this CKripke's heuristic value is " << priority << endl;
+            }
+            if(priority == -1){ //this CKripke cannot get to the goal
+                return;
+            }
 			node *tmp, *q;
             tmp = new node;
             tmp->ck = item;
@@ -87,7 +101,7 @@ class Priority_Queue
             else
             {
                 q = front;
-                while (q->link != NULL && q->link->priority <= priority)
+                while (q->link != NULL && q->link->priority < priority)
                     q=q->link;
                 tmp->link = q->link;
                 q->link = tmp;
@@ -142,6 +156,8 @@ class Planner
   friend class State;
   friend class Action;
   friend class CKripke;
+  friend class PlanningGraph;
+    
  public:
   /* input parameters */
   Semantics m_semantics;
@@ -151,6 +167,10 @@ class Planner
   bool m_detect_essential;
   bool m_output_decisive;
   bool m_series_kripkes;
+  bool debug;
+  Heuristics m_heuristic;
+  bool useHeuristic;
+    
 protected:
   Reader* m_reader;       // reader
   Timer* m_timer;               // timer
@@ -159,8 +179,9 @@ protected:
   map<string,int> m_action_map; // action mapping
   Literals m_literals;          // fluent literals
   //ActionList m_actions;         // action description
-  KActionList sensing;           // Ben: sensing action description
+  //Currently, all actions of all types are included in ontic. No action in sensing and in ann.
   KActionList ontic;             // Ben: ontic (normal) action description
+  KActionList sensing;           // Ben: sensing action description
   KActionList ann;               // Ben: announcement action description
   StaticLaws m_statics;         // static laws
   Kripke m_init_cstate;         // init kripke
@@ -214,7 +235,6 @@ protected:
   /* build the domain & check errors */
   bool build_domain();
   bool build_goal();
-  //bool build_init();
 
   KAction* add_ontic(const string str, PropositionType);
   FluentFormula* and2ff(FluentFormula*, FluentFormula*);
@@ -225,13 +245,11 @@ protected:
   void print(const Literal& l) const;
   void print(const Literals& x) const;
   void print_interal_domain();
-  //void print_summary() const;
   void print_fluform(StringList2);
   void print_fluform(FluentFormula);
-  //void print(KAction*);
-    void print_ontic(KAction*);
-    void print_literals(const Literals&) const;
-    void print_read_init();
+  void print_ontic(KAction*);
+  void print_literals(const Literals&) const;
+  void print_read_init();
     
   //execute function. 
   bool is_executable(Kripke, KAction) const;
@@ -239,18 +257,18 @@ protected:
   Literals compute_effect(KAction*, Kripke*);
   Kstate* comp_nextstate(Kstate, Literals);
   
-    Kripke* execute_ontic(Kripke,KAction);
-    Kripke* execute_sensing(Kripke, KAction);
-    Kripke* execute_ann(Kripke, KAction);
-    Kripke* merge_kripkes(Kripke*, Kripke*, map<int,int>*);
-    Kripke* update_kripke(Kripke k);
+  Kripke* execute_ontic(Kripke,KAction);
+  Kripke* execute_sensing(Kripke, KAction);
+  Kripke* execute_ann(Kripke, KAction);
+  Kripke* merge_kripkes(Kripke*, Kripke*, map<int,int>*);
+  Kripke* update_kripke(Kripke k);
     
-    bool check_Agents(Agent, Agents);
+  bool check_Agents(Agent, Agents);
     
-    void update_node(BFNode*);
-    EdgeList updateEdgesListId(EdgeList, map<int,int>);
+  void update_node(BFNode*);
+  EdgeList updateEdgesListId(EdgeList, map<int,int>);
     
-    bool check_lits(Literal, Literals);
+  bool check_lits(Literal, Literals);
 
 
   /* Kripke functions */
@@ -258,7 +276,7 @@ protected:
 
   /* functions used during the search */  
 protected:
-    Literals negate(const Literals& x) const;
+  Literals negate(const Literals& x) const;
 
 };
 

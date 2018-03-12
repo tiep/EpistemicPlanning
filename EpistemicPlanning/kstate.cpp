@@ -1,6 +1,8 @@
 #include "kstate.h"
 #include "define.h"
 #include "kedge.h"
+#include <map>
+#include <list>
 
 /*********************************************************************
  Kstate implementation
@@ -10,6 +12,7 @@ Kstate::Kstate()
 {
     edge_out = EdgeList();
     edge_in = EdgeList();
+    mapEdgelabelNextState = map<int, set<int> >();
 }
 
 Kstate::~Kstate()
@@ -65,6 +68,26 @@ void Kstate::set_id(int ident)
 void Kstate::set_exist(bool ex)
 {
 	exists = ex;
+}
+
+map<int, set<int> > Kstate::get_preparedMap(){
+    return mapEdgelabelNextState;
+}
+
+void Kstate::reset_map(){
+    mapEdgelabelNextState = map<int, set<int> >();
+}
+
+void Kstate::add_to_map(int ag, int des){
+    
+    set<int> isAdding;
+    if(mapEdgelabelNextState.find(ag) != mapEdgelabelNextState.end()){
+        isAdding = mapEdgelabelNextState[ag];
+    }else{
+        isAdding = set<int>();
+    }
+    isAdding.insert(des);
+    mapEdgelabelNextState[ag] = isAdding;
 }
 
 bool Kstate::entail_lit(Literal l) const

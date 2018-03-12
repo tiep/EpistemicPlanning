@@ -1,9 +1,9 @@
 # Makefile
 
-OBJS	= bison.o lex.o main.o reader.o action.o planner.o kstate.o kedge.o kripke.o
+OBJS	= bison.o lex.o main.o reader.o action.o planner.o kstate.o kedge.o kripke.o planninggraph.o
 
 CC	= g++
-CFLAGS	= -g -Wall -ansi
+CFLAGS	= -g -Wall -ansi -Wno-c++11-extensions
 
 cpa+:		$(OBJS)
 		$(CC) $(CFLAGS) $(OBJS) -o cpa+ -ll
@@ -44,7 +44,10 @@ kedge.o: kedge.cpp kedge.h define.h kstate.h
 kripke.o: kripke.cpp kripke.h define.h 
 	$(CC) $(CFLAGS) -c kripke.cpp -o kripke.o
 
-planner.o: planner.cpp planner.h  state.h define.h reader.h
+planninggraph.o: define.h planninggraph.cpp planninggraph.h
+	$(CC) $(CFLAGS) -c planninggraph.cpp -o planninggraph.o
+	
+planner.o: planner.cpp planner.h  state.h define.h reader.h planninggraph.h
 	$(CC) $(CFLAGS) -c planner.cpp -o planner.o
 
 lex.o yac.o main.o	: 
