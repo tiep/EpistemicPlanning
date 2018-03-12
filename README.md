@@ -4,6 +4,7 @@ This README file is under constructing.
 Solver for Epistemic Planning (tested on iOS 10.11.x and 10.12.x)
 
 1. Compilation
+
 	make
 
     + Requirements:
