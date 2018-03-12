@@ -12,8 +12,8 @@ Solver for Epistemic Planning (tested on iOS 10.11.x and 10.12.x)
         flex, bison and a C++ compiler such as g++.
 
 2. To run the solver:
-  make Makefile
+  make
   
   ./cpa+ inputFileName
   
-  E.g., ./cpa+ ex3.al
+  E.g., ./cpa+ Experiment/Assemble_C.txt
