@@ -3,7 +3,7 @@
 OBJS	= bison.o lex.o main.o reader.o action.o planner.o kstate.o kedge.o kripke.o planninggraph.o
 
 CC	= g++
-CFLAGS	= -g -Wall -ansi -Wno-c++11-extensions
+CFLAGS	= -g -Wall -Wno-c++11-extensions
 
 cpa+:		$(OBJS)
 		$(CC) $(CFLAGS) $(OBJS) -o cpa+ -ll
